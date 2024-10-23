@@ -2,13 +2,20 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  let counter = 5;
+  let [counter, setCounter] = useState(0);
 
   const addValue = () => {
-    console.log("clicked", Math.random(),"  ",counter);
-    
-    counter = counter + 1;
-    
+    if(counter == 20){
+      return
+    }
+    setCounter(counter + 1)
+  }
+
+  const removeValue = () => {
+    if(counter == 0){
+      return
+    }
+    setCounter(counter - 1)
   }
 
   return (
@@ -18,7 +25,7 @@ function App() {
 
       <button onClick={addValue}>Add Value</button>
       <br />
-      <button>Remove value</button>
+      <button onClick={removeValue}>Remove value</button>
     </>
   )
 }

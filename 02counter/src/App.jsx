@@ -8,7 +8,6 @@ function App() {
     if(counter == 20){
       return
     }
-    setCounter(counter + 1)
   }
 
   const removeValue = () => {
